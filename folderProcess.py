@@ -8,10 +8,13 @@ import csv
 def processOneImg (file):
     'return final numpy array for each image'
     img = cv2.imread(file)
+    #resize to standard
+    img = cv2.resize(img, (224, 224)) #TODO: figure out if this sizing is good enough
     # add Gaussian blur to reduce noise
     blurred = cv2.GaussianBlur(img, (5, 5), 0)
     # edge detection
     # canny_edges = cv2.Canny(blurred, 100, 200)
+
 
     # convert to numpy arrays
     img_array = np.array(blurred)
@@ -69,4 +72,4 @@ def process_folder(input_folder, output_csv, prefix, label):
     print(f"Saved {len(records)} records to {output_csv}")
 
 
-process_folder("/home/taya/PycharmProjects/introToAI_finalProject/sandstorm", "sandstorm.csv", "st", 1)
+process_folder("/home/taya/PycharmProjects/introToAI_finalProject/fogsmog", "fogsmog.csv", "fs", 0)
