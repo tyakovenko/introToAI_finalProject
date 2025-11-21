@@ -72,4 +72,4 @@ def process_folder(input_folder, output_csv, prefix, label):
     print(f"Saved {len(records)} records to {output_csv}")
 
 
-process_folder("/home/taya/PycharmProjects/introToAI_finalProject/fogsmog", "fogsmog.csv", "fs", 0)
+process_folder("/home/taya/PycharmProjects/introToAI_finalProject/rain", "rain.csv", "r", 2)
